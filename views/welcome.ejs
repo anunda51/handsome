@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ยินดีต้อนรับ</title>
+  </head>
+  <body>
+    <a href="/login"> <button>ออกจากระบบ</button> </a>
+    <fieldset
+      style="margin-top : 10%; margin-left : 33%; margin-right : 33%; padding-bottom: 2%;"
+    >
+      <h1 style="font-size: 2rem;text-align: right">
+        User : <%=user.doctype%>
+      </h1>
+
+      <div style="font-size:25px;">
+        <div>ชือ - นามสกุล : <%=user.name + " " + user.surname%></div>
+        <div>ตำแหน่งงาน : <%=user.doctype%></div>
+        <div id="salary">เงินเดือน : <%=user.salary%></div>
+        <div id="ot">เงิน OT : <%=user.OT%></div>
+        <div id="bonus">เงินโบนัส : <%=user.bonus%></div>
+        <div id="total">
+          เงินสุทธิ : <%=(user.salary + user.OT + user.bonus) - ((user.salary +
+          user.OT + user.bonus) * 0.05)%>
+        </div>
+      </div>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <form action="/welcome" method="post">
+      <fieldset style="margin-top : 10%; margin-left : 33%; margin-right : 33%; padding-bottom: 3%;">
+        <div align="center">
+          <fieldset style="margin-left : 20%; margin-right : 20%; margin-bottom: 10%;">
+            <div style="font-size:40px;">Login</div>
+          </fieldset>
+          <br />
+          <div style="text-align:left; margin-left: 15%; margin-right: 15%;">
+            User<input style="float:right" type="text" id="user" name="user" required/>
+            <br /><br />
+            Password<input style="float:right" type="password" id="password" name="password" required/>
+            <br /><br />
+            <br />
+            <button style="display: inline-block; width: 45%; height: 2rem;" type="submit">Ok</button>
+            <button style="display: inline-block; width: 45%; height: 2rem; float:right" type="button" onclick="cancel()">
+                Cancel
+            </button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <script>
+      if ("<%= error %>" === "ไม่พบข้อมูล") {
+        alert("ไม่พบข้อมูลผู้ใช้งาน");
+        window.location.href = "/login"
+      }
+
+      function cancel() {
+        var user = document.getElementById("user");
+        var pass = document.getElementById("password");
+        user.value = "";
+        pass.value = "";
+      }
+    </script>
+  </body>
+</html>
